@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: 23f1002750@ds.study.iitm.ac.in
+      - name: Step with email 23f1002750@ds.study.iitm.ac.in in its name
         run: echo "This step includes my email in the name."
 
       - name: Create a commit with timestamp
