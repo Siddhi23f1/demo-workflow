@@ -10,10 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          persist-credentials: true  # allows pushing back using GITHUB_TOKEN
-
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Step with email 23f1002750@ds.study.iitm.ac.in in its name
         run: echo "This step includes my email in the name."
