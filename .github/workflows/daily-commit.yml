@@ -1,34 +1,8 @@
-name: Daily Commit
-
-on:
-  push:
-    branches:
-      - master
-  workflow_dispatch:      # allows manual trigger
-  schedule:
-    - cron: '05 10 * * *' # daily at 09:50 UTC
-
+name: hello-world
+on: push
 jobs:
-  commit:
+  my-job:
     runs-on: ubuntu-latest
-    name: Commit Job - 23f1002750@ds.study.iitm.ac.in
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Make a trivial change
-        run: |
-          echo "Last run: $(date)" >> daily-commit.txt
-
-      - name: Configure Git
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email "23f1002750@ds.study.iitm.ac.in"
-
-      - name: Commit changes
-        run: |
-          git add daily-commit.txt
-          git commit -m "Daily commit from GitHub Actions [skip ci]" || echo "No changes to commit"
-
-      - name: Push changes
-        run: git push
+      - name: my-step
+        run: echo "Hello World!"
