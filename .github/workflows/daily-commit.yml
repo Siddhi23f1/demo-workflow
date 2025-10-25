@@ -1,12 +1,9 @@
 name: Daily Commit
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
   schedule:
-    - cron: '50 9 * * *' # daily at 09:50 UTC
+    - cron: '50 9 * * *'
 
 jobs:
   commit:
@@ -15,6 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: true  # important for push
 
       - name: Make a trivial change
         run: echo "Last run: $(date)" >> daily-commit.txt
