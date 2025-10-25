@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: '45 6 * * *'  # Runs daily at 06:45 UTC with specific hour and minute
 
+permissions:
+  contents: write
+
 jobs:
   daily_commit:
     runs-on: ubuntu-latest
